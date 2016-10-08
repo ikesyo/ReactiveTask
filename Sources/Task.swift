@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 Carthage. All rights reserved.
 //
 
+import Dispatch
 import Foundation
 import ReactiveSwift
 import Result
@@ -539,3 +540,7 @@ extension Task {
 		}
 	}
 }
+
+#if os(Linux)
+	private typealias Process = Foundation.Task
+#endif
